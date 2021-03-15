@@ -22,7 +22,7 @@ function Chicken(name, age) {
   var animals = [new Chicken(), new Cow(), new Sheep()]
   var names = ["Betty", "Joe", "Chickle", "Chik-fil-a", "Moo"]
 
-  function generateRandomIndex(maxIndex) {
+  function getRandomIndex(maxIndex) {
       return Math.floor(Math.random() * maxIndex)
   }
 
@@ -32,7 +32,7 @@ function Chicken(name, age) {
   }
 
   function generateRandomAge() {
-      return getRanxomIndex(5);
+      return getRandomIndex(5);
   }
   
   function generateRandomAnimal() {
@@ -50,5 +50,15 @@ function Chicken(name, age) {
     {
       return new Sheep(generateRandomName(), generateRandomAge());
     }
+  }
+
+  function onLoad() {
+    let animal = generateRandomAnimal();
+    console.log(animal)
+    document.getElementById("animal-properties").textContent = animal.name + "  " + animal.age + "years old";
+    let imageTag = document.getElementById("animal-img");
+    imageTag.setAttribute("src", animal.image);
+    imageTag.setAttribute("alt", animal.image_alt);
+  
   }
   
