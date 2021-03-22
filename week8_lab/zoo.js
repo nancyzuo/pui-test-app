@@ -59,6 +59,6 @@ function Chicken(name, age) {
     let imageTag = document.getElementById("animal-img");
     imageTag.setAttribute("src", animal.image);
     imageTag.setAttribute("alt", animal.image_alt);
-  
+    localStorage.setItem("savedAnimal", JSON.stringify(animal));
   }
   
